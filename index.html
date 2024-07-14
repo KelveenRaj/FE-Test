@@ -1,127 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FE Test - Fourtitude Asia</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header-container">
-        <img src="assets/images/logo.svg" alt="Logo" class="logo" />
-        <nav class="nav">
-          <ul>
-            <li><a href="#section1">Development & Integration</a></li>
-            <li><a href="#section2">UI & UX Design</a></li>
-            <li><a href="#section3">Connect</a></li>
-          </ul>
-          <div class="hamburger" onclick="toggleMenu()"></div>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FE Test - Fourtitude Asia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <img src="assets/images/logo.svg" alt="Logo" class="logo" />
+      <nav class="nav">
+        <ul>
+          <li><a href="#section1">Development & Integration</a></li>
+          <li><a href="#section2">UI & UX Design</a></li>
+          <li><a href="#section3">Connect</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()"></div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="section1" class="section-wrapper">
+      <div class="title-wrapper">
+        <h1>Development & Integration</h1>
+        <p>
+          Our development and integration services cater to organisations
+          looking at digital transformation and Industry 4.0. Let’s work
+          together to realise your business goals today.
+        </p>
+        <div id="section1-content" class="section-container"></div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section id="section1" class="section-wrapper">
-        <div class="title-wrapper">
-          <h1>Development & Integration</h1>
+    <section id="section2" class="section-wrapper">
+      <div class="title-wrapper">
+        <h1>UI & UX Design</h1>
+        <p>
+          We bring value to your business by producing seamless,
+          multi-platform digital experiences that result in strong, meaningful
+          user engagements. Read more about our services below.
+        </p>
+        <div id="section2-content" class="section-container"></div>
+      </div>
+    </section>
+
+    <section id="section3" class="section-wrapper">
+      <div class="form-wrapper">
+        <div class="form-title">
+          <h1>Connect</h1>
           <p>
-            Our development and integration services cater to organisations
-            looking at digital transformation and Industry 4.0. Let’s work
-            together to realise your business goals today.
+            Every successful connection starts in conversation. Drop us a line
+            today :)
           </p>
-          <div id="section1-content" class="section-container"></div>
         </div>
-      </section>
-
-      <section id="section2" class="section-wrapper">
-        <div class="title-wrapper">
-          <h1>UI & UX Design</h1>
-          <p>
-            We bring value to your business by producing seamless,
-            multi-platform digital experiences that result in strong, meaningful
-            user engagements. Read more about our services below.
-          </p>
-          <div id="section2-content" class="section-container"></div>
-        </div>
-      </section>
-
-      <section id="section3" class="section-wrapper">
-        <div class="form-wrapper">
-          <div class="form-title">
-            <h1>Connect</h1>
-            <p>
-              Every successful connection starts in conversation. Drop us a line
-              today :)
-            </p>
-          </div>
-          <form class="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder=" "
-                  required
-                />
-                <label for="name">Name</label>
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder=" "
-                  required
-                />
-                <label for="email">Email Address</label>
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  placeholder=" "
-                  required
-                />
-                <label for="phone">Contact No</label>
-              </div>
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder=" " required />
+              <label for="name">Name</label>
             </div>
             <div class="form-group">
-              <textarea
-                id="message"
-                name="message"
-                placeholder=" "
-                required
-              ></textarea>
-              <label for="message">How can we help you?</label>
+              <input type="email" id="email" name="email" placeholder=" " required />
+              <label for="email">Email Address</label>
             </div>
-            <div class="btn-wrapper">
-              <button id="clear-btn" onclick="clearAll()">Clear</button>
-              <button class="submit-btn" type="submit">Connect with us</button>
+            <div class="form-group">
+              <input type="text" id="phone" name="phone" placeholder=" " required />
+              <label for="phone">Contact No</label>
             </div>
-          </form>
-        </div>
-      </section>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder=" " required></textarea>
+            <label for="message">How can we help you?</label>
+          </div>
+          <div class="btn-wrapper">
+            <button id="clear-btn" onclick="clearAll()">Clear</button>
+            <button class="submit-btn" type="submit">Connect with us</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
-      <div id="alert-modal" class="modal">
-        <div class="modal-content">
-          <div class="modal-text">
-            <p>This Page Says</p>
-            <p>Thank you! We will get in touch with you as soon as possible.</p>
-          </div>
-          <div class="modal-btn">
-            <button id="alert-btn">OK</button>
-          </div>
+    <div id="alert-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-text">
+          <p>This Page Says</p>
+          <p>Thank you! We will get in touch with you as soon as possible.</p>
+        </div>
+        <div class="modal-btn">
+          <button id="alert-btn">OK</button>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer class="footer">
-      <p>© 2021 Fourtitude Asia. All rights reserved.</p>
-    </footer>
+  <footer class="footer">
+    <p>© 2021 Fourtitude Asia. All rights reserved.</p>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

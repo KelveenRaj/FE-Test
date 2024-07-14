@@ -7,10 +7,8 @@ const modal = document.getElementById("alert-modal");
 const alertBtn = document.getElementById("alert-btn");
 
 const toggleMenu = () => {
-  const nav = document.querySelector(".nav ul");
-  const hamburger = document.querySelector(".hamburger");
-  nav.classList.toggle("active");
-  hamburger.classList.toggle("active");
+  document.querySelector(".nav ul").classList.toggle("active");
+  document.querySelector(".hamburger").classList.toggle("active");
 };
 
 const validateEmail = (value) => {
@@ -92,16 +90,9 @@ const fetchData = async () => {
     const response = await fetch("/assets/data.json");
     const data = await response.json();
 
-    if (data.section1Data) {
+    if (data.section1Data && data.section2Data) {
       renderSection("section1-content", data.section1Data);
-    } else {
-      console.error("section1Data not found in JSON file");
-    }
-
-    if (data.section2Data) {
       renderSection("section2-content", data.section2Data);
-    } else {
-      console.error("section2Data not found in JSON file");
     }
   } catch (error) {
     console.error("Error loading JSON data:", error);
@@ -111,25 +102,13 @@ const fetchData = async () => {
 const clearAll = () => {
   formInputs.forEach((input) => {
     input.value = "";
-    input.classList.remove("filled");
   });
+  submitBtn.disabled = true;
 };
 
 const formGroupListener = () => {
   formInputs.forEach((input) => {
-    const checkInputValue = () => {
-      if (input.value) {
-        input.classList.add("filled");
-      } else {
-        input.classList.remove("filled");
-      }
-      formValidation();
-    };
-
-    checkInputValue();
-
-    input.addEventListener("input", () => checkInputValue(input));
-    input.addEventListener("blur", () => checkInputValue(input));
+    input.addEventListener("blur", () => formValidation());
   });
 };
 
